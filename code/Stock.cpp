@@ -51,7 +51,6 @@ ValuePaper& Stock::operator+(const ValuePaper& other) const{
 	int totalStocksOfBothComps = 0; //todo: init this field, sum of total stocks of each companyS
 	totalStocksOfBothComps = AllCompanies::instance().findComp(compName)->getNumOfPapers() + AllCompanies::instance().findComp(other.getCompName())->getNumOfPapers();
 	//totalStocksOfBothComps = companies->find(this->compName) + companies->find(other.compName); //todo: should remove comment off this line, but im afraid!
-	//todo: fix thix memory leak. should return by value but can't return ValuePaper cuz its abstract
 	string newname = compName + "&" + other.getCompName();
 	int newNumOfStocks = numOfPapers + other.getNumOfPapers();
 	double newValue = (valuePerPaper + other.getValuePerPaper()) / 2.0;
